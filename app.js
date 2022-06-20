@@ -6,8 +6,8 @@ import {usersRouter} from "./routes/users.js";
 import {verifyRouter} from "./routes/verifyUser.js";
 
 
-dotenv.config()
-const PORT = process.env.PORT || 3000;
+// dotenv.config()
+const PORT = 3000;
 const app = express();
 
 app.use(cors());
