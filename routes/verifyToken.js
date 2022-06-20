@@ -5,7 +5,7 @@ function verify(req, res, next) {
     if (!token) return res.status(401).send('Access Denied');
 
     try {
-        req.user = jwt.verify(token, process.env.TOKEN_SECRET);
+        req.user = jwt.verify(token, 'sadSADASDSADdadsa');
         next();
     } catch (err) {
         res.status(400).send('Invalid Token');

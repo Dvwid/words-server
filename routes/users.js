@@ -14,6 +14,17 @@ const query = {
            RETURNING id, password`
 }
 
+router.get("/createUserTable", (req, res) => {
+    db.query(`CREATE TABLE users(
+    id serial primary key,
+    name string,
+    email string,
+    password email,
+)`, (err, results) => {
+        console.log(results, err, 'XD')
+    })
+})
+
 router.post("/register", jsonParser, async (req, res) => {
     let {name, email, password} = req.body;
     if (email && password) {
@@ -34,6 +45,7 @@ router.post("/register", jsonParser, async (req, res) => {
 })
 
 router.post("/login", jsonParser, async (req, res) => {
+
     let {email, password} = await req.body;
     if (email && password) {
          db.query(`SELECT id, name, avatar, email, password FROM users WHERE email = $1`, [email], async (err, results) => {
@@ -42,7 +54,7 @@ router.post("/login", jsonParser, async (req, res) => {
                 const validPass = await bcrypt.compare(password, results.rows[0].password);
                 if(!validPass) return res.status(400).json('The email address or password is incorrect');
 
-                const token = jwt.sign({_id: results.rows[0].id, }, process.env.TOKEN_SECRET);
+                const token = jwt.sign({_id: results.rows[0].id, }, 'sadSADASDSADdadsa');
 
                 res.json({
                     "jwt":token,
