@@ -7,7 +7,7 @@ import {verifyRouter} from "./routes/verifyUser.js";
 
 
 // dotenv.config()
-const PORT = 4000;
+const PORT = 5000;
 const app = express();
 
 app.use(cors());
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.send('Hello world')
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('App listening on port', PORT);
 })
 
