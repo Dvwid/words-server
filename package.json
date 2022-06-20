@@ -1,7 +1,6 @@
 {
-  "name": "quickly",
+  "name": "easy-words-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "type": "module",
   "dependencies": {
@@ -23,5 +22,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dawid Hutyra",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dvwid/words-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dvwid/words-server/issues"
+  },
+  "homepage": "https://github.com/Dvwid/words-server#readme",
+  "description": ""
 }
