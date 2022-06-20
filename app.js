@@ -14,7 +14,9 @@ app.use(cors());
 app.use('/words', wordsRouter);
 app.use('/users', usersRouter);
 app.use('/verifyUser', verifyRouter);
-app.get('/', () => {});
+app.get('/', (req, res) => {
+    res.send('Hello world')
+});
 
 app.listen(PORT, () => {
     console.log('App listening on port', PORT);

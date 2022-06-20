@@ -14,17 +14,6 @@ const query = {
            RETURNING id, password`
 }
 
-router.get("/createUserTable", (req, res) => {
-    db.query(`CREATE TABLE users(
-    id serial primary key,
-    name string,
-    email string,
-    password email,
-)`, (err, results) => {
-        console.log(results, err, 'XD')
-    })
-})
-
 router.post("/register", jsonParser, async (req, res) => {
     let {name, email, password} = req.body;
     if (email && password) {
